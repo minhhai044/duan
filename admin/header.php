@@ -26,9 +26,9 @@
       </header>
       <nav>
         <ul>
-          <li><a href="#">Trang chủ</a></li>
-          <li><a href="#">Danh mục</a></li>
-          <li><a href="#">Sản phẩm</a></li>
+          <li><a href="index.php">Trang chủ</a></li>
+          <li><a href="index.php?act=adddm">Danh mục</a></li>
+          <li><a href="index.php?act=addsp">Sản phẩm</a></li>
           <li><a href="#">Hỏi đáp</a></li>
           <li><a href="#">Hỗ trợ</a></li>
         </ul>
