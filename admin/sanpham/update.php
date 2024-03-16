@@ -13,14 +13,6 @@
 <h2>Cập nhật sản phẩm</h2>
     <form action="index.php?act=updatesp" method="post" enctype="multipart/form-data">
         <div class="form_text">
-        <select name="iddm" id="">
-            <?php 
-            foreach ($listdm as $dm){
-                extract($dm);
-                 $id == $iddm ? $e="selected":"";echo "<option  value=$id $e>$tendm</option>";
-            }
-            ?>
-        </select> <br>
         <p>Tên sản phẩm:</p> <input type="text" name="tensp"  value="<?=$tensp?>"> <br>
         <p>Ảnh :</p>  <input type="file" name="hinh"  value=""> <?=$anh?>' <br>
         <p>Giá :</p> <input type="number" name="gia"  value="<?=$giasp?>" > <br>

@@ -2,6 +2,7 @@
 include "../model/pdo.php";
 include "../model/danhmuc.php";
 include "../model/sanpham.php";
+include "../model/taikhoan.php";
 include "header.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -74,7 +75,7 @@ if (isset($_GET['act'])) {
                     }
                 }
             }
-            
+
             $listdm = loadall_danhmuc();
             include "sanpham/add.php";
             break;
@@ -90,39 +91,70 @@ if (isset($_GET['act'])) {
             $listsp = list_sanpham($kyw, $iddm);
             include "sanpham/list.php";
             break;
-            case 'xoasp':
-                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                    delete_sanpham($_GET['id']);
-                }
-                $listsp = list_sanpham1();
-                include "sanpham/list.php";
-                break;
-            case 'suasp':
-                    $listdm = loadall_danhmuc();
-                    $listsp = list_sanpham1();
-                    if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                        $sp = sua_sanpham($_GET['id']);
-                    }
-                    include "sanpham/update.php";
-                    break;
-                    case 'updatesp':
-                        if (isset($_POST["capnhat"]) && $_POST["capnhat"]) {
-                            $id = $_POST['id'];
-                            $tensp = $_POST['tensp'];
-                            $gia = $_POST['gia'];
-                            $mota = $_POST['mota'];
-                            $iddm = $_POST['iddm'];
-                            $filename = $_FILES['hinh']['name'];
-                            $target_dir = "../uploadfile/";
-                            $target_file = $target_dir . basename($filename);
-                            move_uploaded_file($_FILES['hinh']['tmp_name'], $target_file);
-                            update_sanpham( $id, $tensp, $gia, $mota, $filename);
-                        }
-                        $listdm = loadall_danhmuc();
-                        $listsp = list_sanpham1();
-        
-                        include "sanpham/list.php";
-                        break;
+        case 'xoasp':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                delete_sanpham($_GET['id']);
+            }
+            $listsp = list_sanpham1();
+            include "sanpham/list.php";
+            break;
+        case 'suasp':
+            $listdm = loadall_danhmuc();
+            $listsp = list_sanpham1();
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $sp = sua_sanpham($_GET['id']);
+            }
+            include "sanpham/update.php";
+            break;
+        case 'updatesp':
+            if (isset($_POST["capnhat"]) && $_POST["capnhat"]) {
+                $id = $_POST['id'];
+                $tensp = $_POST['tensp'];
+                $gia = $_POST['gia'];
+                $mota = $_POST['mota'];
+                $filename = $_FILES['hinh']['name'];
+                $target_dir = "../uploadfile/";
+                $target_file = $target_dir . basename($filename);
+                move_uploaded_file($_FILES['hinh']['tmp_name'], $target_file);
+                update_sanpham($id, $tensp, $gia, $mota, $filename);
+            }
+            $listdm = loadall_danhmuc();
+            $listsp = list_sanpham1();
+            include "sanpham/list.php";
+            break;
+        case 'dskh':
+            $listtk = list_taikhoan();
+            include "taikhoan/list.php";
+            break;
+        case 'xoatk':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                // $sql = "DELETE FROM danhmuc WHERE id=".$_GET['id'];
+                // pdo_execute($sql);
+                delete_taikhoan($_GET['id']);
+            }
+            // $sql = "SELECT*FROM danhmuc ORDER BY id desc";
+            // $listdm = pdo_query($sql);
+            $listtk = list_taikhoan();
+            include "taikhoan/list.php";
+            break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         default:
 

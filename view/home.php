@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ADMIN</title>
-    <link rel="stylesheet" href="../cssfile/cssadmin.css">
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <div class="header_img">
-          <img
-            src="https://tse4.mm.bing.net/th?id=OIP.QdkBFiUZG4SMw0C7krIbrwHaHa&pid=Api&P=0&h=180"
-            alt=""
-          />
-        </div>
-        <!-- <div class="header_search">
-          <input type="text" />
-          <button>Tìm kiếm</button>
-        </div>
-        <div class="header_dndk">
-          <a href="">Đăng nhập</a>
-          <a href="">Đăng ký</a>
-        </div> -->
-      </header>
-      <nav>
-        <ul>
-          <li><a href="index.php">Trang chủ</a></li>
-          <li><a href="index.php?act=adddm">Danh mục</a></li>
-          <li><a href="index.php?act=addsp">Sản phẩm</a></li>
-          <li><a href="index.php?act=dskh">Tài khoản</a></li>
-          <li><a href="../index.php">Thoát</a></li>
-        </ul>
-      </nav>
-      <!-- <div class="slideshow">
+<div class="slideshow">
         <div class="slideleft">
           <img
             src="https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:10/plain/https://dashboard.cellphones.com.vn/storage/samsung-s23-th1-right.png"
@@ -50,15 +15,15 @@
         </div>
         <div class="slideshow-container">
           <div class="mySlides fade">
-            <img src="img/3.jpg" />
+            <img src="uploadfile/3.jpg" />
           </div>
 
           <div class="mySlides fade">
-            <img src="img/4.jpg" />
+            <img src="uploadfile/5.jpg" />
           </div>
 
           <div class="mySlides fade">
-            <img src="img/5.jpg" />
+            <img src="uploadfile/x.jpg" />
           </div>
         </div>
         <div class="slideright">
@@ -75,9 +40,8 @@
             alt=""
           />
         </div>
-      </div> -->
-
-      <!-- <article>
+      </div>
+<article>
         <img
           src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2024/03/banner/Desk-1200x100.png"
           alt=""
@@ -102,11 +66,11 @@
           <div class="sanpham_4"></div>
           <div class="sanpham_5"></div>
         </div>
-      </article> -->
-    </div>
+      </article>
+      </div>
   </body>
 
-  <!-- <script>
+  <script >
     let slideIndex = 0;
     showSlides();
 
@@ -123,5 +87,5 @@
       slides[slideIndex - 1].style.display = "block";
       setTimeout(showSlides, 2000); // Change image every 2 seconds
     }
-  </script> -->
+  </script>
 </html>

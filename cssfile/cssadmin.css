@@ -25,7 +25,10 @@ header img {
   border-radius: 50%;
   margin: 0 10px;
 }
-
+.header_dndk .hienthi{
+  margin: 0px 10px;
+  
+}
 .header_search input {
   width: 330px;
   height: 23px;
@@ -182,7 +185,7 @@ article .top_sanpham .top_sanpham_5 {
   height: 30px;
   margin: 10px 0px;
 }
-select{
+select {
   width: 600px;
   height: 30px;
 }
@@ -206,16 +209,16 @@ select{
 .table_list h2 {
   margin: 20px 0px;
 }
-.table_list input{
-width: 100px;
-height: 30px;
-margin: 5px 0px;
-border: 0px;
+.table_list input {
+  width: 100px;
+  height: 30px;
+  margin: 5px 0px;
+  border: 0px;
   font-weight: bold;
   background-color: gray;
 }
-.table_list input:hover{
-background-color: aquamarine;
+.table_list input:hover {
+  background-color: aquamarine;
 }
 table {
   font-family: arial, sans-serif;
@@ -232,4 +235,12 @@ th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+/* ==========================đăng ký đăng nhập */
+.dangky_dangnhap {
+  width: 100%;
+  /* height: 500px; */
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  
 }
