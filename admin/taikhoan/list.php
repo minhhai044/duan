@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="../filecss/a.css">
 <div class="container">
     <table>
-        <h2 style="margin:10px 0px ;">Danh sách loại Hàng</h2>
+        <h2 style="margin:10px 0px ;">Danh sách khách hàng</h2>
         <tr>
             <th colspan="">Mã TK</th>
-            <th colspan="">Tên Đăng nhập</th>
+            <th colspan="">Tên </th>
             <th colspan="">Mật khẩu</th>
             <th colspan="">Email</th>
             <th colspan="">Địa chỉ</th>

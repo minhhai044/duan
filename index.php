@@ -5,6 +5,9 @@ include "model/sanpham.php";
 include "model/danhmuc.php";
 include "model/taikhoan.php";
 include "./view/header.php";
+include "global.php";
+$dsdm = loadall_danhmuc();
+$spnew = list_sanpham_home();
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
@@ -67,9 +70,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 }
             }
 
-
-
-
             include "view/taikhoan/dangky.php";
             break;
         case 'dangnhap':
@@ -102,6 +102,16 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 }
             }
             include "view/taikhoan/quenmk.php";
+            break;
+        case 'sanpham':
+            if (isset($_GET['iddm']) && ($_GET['iddm'])) {
+                $iddm = $_GET['iddm'];
+                $dssp = list_sanpham("", $iddm);
+                $ten = loadtendm($iddm);
+                include "view/sanpham.php";
+            } else {
+                include "view/home.php";
+            }
             break;
     }
 } else {

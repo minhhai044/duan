@@ -1,0 +1,3 @@
+<?php 
+    $imm="uploadfile/";
+?>

@@ -80,13 +80,38 @@ ul li a:hover {
 }
 .slideleft {
   width: 20%;
-  height: 300px;
+  height: 305px;
   margin-right: 5px;
+  background-color: aquamarine;
 }
 .slideleft img {
   width: 100%;
   height: 33%;
 }
+.slideleft .listdanhmuc {
+  width: 100%;
+  height: 20%;
+  text-align: center;
+  /* margin-top: 1px; */
+  position: relative; /* Tạo vị trí tương đối cho phần tử cha */
+}
+
+.slideleft .listdanhmuc:hover {
+  background-color: antiquewhite;
+}
+
+.slideleft .listdanhmuc a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  position: absolute; /* Tạo vị trí tuyệt đối cho phần tử con */
+  top: 50%; /* Đặt phần tử con ở giữa theo chiều dọc */
+  left: 0; /* Đặt phần tử con ở góc trái của phần tử cha */
+  transform: translateY(-50%); /* Dịch chuyển phần tử con lên trên một nửa chiều cao của nó */
+  width: 100%; /* Đảm bảo liên kết chiếm toàn bộ chiều rộng của phần tử cha */
+}
+
+
 .slideshow-container {
   width: 60%;
   height: 300px;
@@ -106,7 +131,7 @@ ul li a:hover {
 }
 /* end Slideshow */
 /* top san pham ============================== */
-article img {
+article img:nth-child(1) {
   width: 100%;
   margin-top: 10px;
   display: block;
@@ -159,11 +184,55 @@ article .top_sanpham .top_sanpham_5 {
   background-color: #f1f1f1;
 }
 .sanpham {
-  width: 100%;
-  height: 1000px;
-  background-color: aquamarine;
+  margin-top: 10px;
+  width: 1170px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+h1 {
+  text-align: center;
   margin: 10px 0px;
-  border-radius: 20px;
+  font-weight: bold;
+  color: gray;
+}
+.sanpham .sanpham_home {
+  width: 210px;
+  height: 300px;
+
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+
+}
+
+
+.sanpham .sanpham_home p a{
+  text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+.sanpham .sanpham_home h5 a {
+  text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.sanpham .sanpham_home h5 {
+  color: black;
+    margin: 10px 0px;
+    font-size: 20px;
+}
+
+.sanpham .sanpham_home p {
+    margin: 10px 0px;
+    font-size: 20px;
+
+}
+
+.sanpham .sanpham_home img {
+  width: 100%;
+  height: 200px;
 }
 
 /* endtop san pham ============================== */
