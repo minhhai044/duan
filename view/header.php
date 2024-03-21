@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ADMIN</title>
+    <title>Trang chủ</title>
     <link rel="stylesheet" href="./cssfile/cssadmin.css">
   </head>
   <body>
@@ -42,7 +42,7 @@
       <nav>
         <ul>
           <li><a href="index.php">Trang chủ</a></li>
-          <li><a href="index.php?act=adddm">Giới thiệu</a></li>
+          <li><a href="index.php?act=adddm">Sản phẩm</a></li>
           <li><a href="index.php?act=addsp">Liên hệ</a></li>
           <li><a href="">Hỏi đáp</a></li>
           <li><a href="#">Hỗ trợ</a></li>

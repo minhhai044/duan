@@ -12,7 +12,7 @@
             ?>
         </select> <br>
         <p>Tên sản phẩm:</p><input placeholder="Nhập tên sản phẩm" type="text" name="tensp" id="sp"> <br>
-       <p> Ảnh :</p> <input type="file"  name="hinh" id="sp"> <br>
+       <p> Ảnh :</p> <input type="file"   name="hinh" id="sp"> <br>
         <p>Giá : </p><input type="number" placeholder="Nhập giá sản phẩm" name="gia" id="sp"> <br>
         <p>Mô tả :</p> <textarea placeholder="Nhập mô tả" name="mota" cols="79" rows="10"></textarea> <br>
     </div>

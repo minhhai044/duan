@@ -7,16 +7,17 @@
 .container {
   margin: auto;
   padding: 0 20px;
-  max-width: 1200px;
+  width: 1200px;
 }
 
 /* header =================================== */
 header {
-  background-color: aquamarine;
+  background-color: wheat;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 0;
+  width: 1160px;
 }
 
 header img {
@@ -55,6 +56,7 @@ nav {
   background-color: rgb(8, 22, 20);
   height: 30px;
   margin-top: 1px;
+  width: 1160px;
 }
 ul {
   list-style: none;
@@ -76,13 +78,13 @@ ul li a:hover {
 .slideshow {
   margin-top: 5px;
   display: flex;
-  max-width: 1200px;
+  width: 1160px;
 }
 .slideleft {
   width: 20%;
   height: 305px;
   margin-right: 5px;
-  background-color: aquamarine;
+  background-color: antiquewhite;
 }
 .slideleft img {
   width: 100%;
@@ -97,7 +99,7 @@ ul li a:hover {
 }
 
 .slideleft .listdanhmuc:hover {
-  background-color: antiquewhite;
+  background-color: white;
 }
 
 .slideleft .listdanhmuc a {
@@ -131,9 +133,9 @@ ul li a:hover {
 }
 /* end Slideshow */
 /* top san pham ============================== */
-article img:nth-child(1) {
+.banner img {
   width: 100%;
-  margin-top: 10px;
+  margin: 10px 0px;
   display: block;
 }
 .hot_top_sanpham {
@@ -152,40 +154,39 @@ article .top_sanpham {
 article .top_sanpham .top_sanpham_1 {
   width: 17%;
   height: 350px;
+  text-align: center;
   background-color: #f1f1f1;
   margin: 10px 10px 20px 10px;
 }
-article .top_sanpham .top_sanpham_2 {
-  width: 17%;
-  margin: 10px 10px 20px 10px;
-
-  height: 350px;
-  background-color: #f1f1f1;
+article .top_sanpham .top_sanpham_1 p a{
+  text-decoration: none;
+    color: black;
+    font-size: 18px;
 }
-article .top_sanpham .top_sanpham_3 {
-  width: 17%;
-  margin: 10px 10px 20px 10px;
-
-  height: 350px;
-  background-color: #f1f1f1;
+article .top_sanpham .top_sanpham_1 h5 a {
+  text-decoration: none;
+    color: black;
+    font-size: 18px;
 }
-article .top_sanpham .top_sanpham_4 {
-  width: 17%;
-  margin: 10px 10px 20px 10px;
-
-  height: 350px;
-  background-color: #f1f1f1;
+article .top_sanpham .top_sanpham_1 h5 {
+  color: black;
+    margin: 10px 0px;
+    font-size: 20px;
 }
-article .top_sanpham .top_sanpham_5 {
-  width: 17%;
-  margin: 10px 10px 20px 10px;
 
-  height: 350px;
-  background-color: #f1f1f1;
+article .top_sanpham .top_sanpham_1 p {
+    margin: 10px 0px;
+    font-size: 20px;
+
+}
+
+article .top_sanpham .top_sanpham_1 img {
+  width: 100%;
+  height: 200px;
 }
 .sanpham {
   margin-top: 10px;
-  width: 1170px;
+  width: 1190px;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
 }
@@ -312,4 +313,110 @@ tr:nth-child(even) {
   background-color: rgb(255, 255, 255);
   border-radius: 20px;
   
+}
+/* trang chi tiết */
+.sanpham_chitiet {
+  width: 1160px;
+  
+  border: 1px solid gray;
+  margin-top: 3px;
+}
+.sanpham_chitiet .sanpham_chitiet_ten {
+  height: 30px;
+  background-color: gray;
+}
+/* .sanpham_chitiet .sanpham_chitiet_hienthi{
+  display: flex;
+}
+
+.sanpham_chitiet .sanpham_chitiet_hienthi p{
+  
+  margin: 10px;
+  } */
+  .sanpham_chitiet .sanpham_chitiet_hienthi_left img{
+    width: 100%;
+    /* margin: 10px; */
+    }
+.sanpham_chitiet_hienthi .sanpham_chitiet_hienthi_right .dungluong button{
+  width: 150px;
+  height: 50px;
+  background-color: antiquewhite;
+  border: none;
+  margin: 10px 10px;
+  
+}
+.sanpham_chitiet_hienthi {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto;
+}
+.sanpham_chitiet_hienthi .sanpham_chitiet_hienthi_right {
+  width: 658px;
+}
+
+.sanpham_chitiet_hienthi .sanpham_chitiet_hienthi_left{
+  width: 500px;
+}
+.sanpham_chitiet_hienthi .sanpham_chitiet_hienthi_right .soluong button{
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #ececec;
+  cursor: pointer;
+}
+.sanpham_chitiet_hienthi .sanpham_chitiet_hienthi_right .soluong button:hover{
+  background-color: #ececec;
+}
+.sanpham_chitiet_hienthi .sanpham_chitiet_hienthi_right .soluong{
+  display: flex;
+  margin: 10px 10px;
+}
+.sanpham_chitiet_hienthi .sanpham_chitiet_hienthi_right .mota{
+
+  margin: 0px 10px;
+}
+.sanpham_chitiet_hienthi .sanpham_chitiet_hienthi_right .mota p{
+  font-size: 20px;
+}
+.sanpham_chitiet_hienthi .sanpham_chitiet_hienthi_right .mota h2 {
+  text-align: center;
+  margin: 10px 0px;
+  font-weight: bold;
+}
+.sanpham_chitiet_hienthi .sanpham_chitiet_hienthi_right .soluong svg{
+ color: #909090;
+}
+.sanpham_chitiet_hienthi .sanpham_chitiet_hienthi_right .soluong input{
+  width: 60px;
+  border: 1px solid #ececec;
+  text-align: center;
+}
+/* chi tiết */
+.buttom_chitiet {
+  display: flex;
+  justify-content: center; 
+}
+.buttom_chitiet button:nth-child(1){
+  width: 400px;
+  height: 50px;
+  background-color: red;
+  border: 0px;
+  cursor: pointer;
+  
+}
+.buttom_chitiet button:nth-child(2){
+  width: 50px;
+  height: 50px;
+  border: 0px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.sanpham_chitiet_lienquan{
+  height: 30px;
+  background-color: gray;
+}
+.sanpham_chitiet_hienthilienquan{
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto auto auto auto ;
 }

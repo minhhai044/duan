@@ -23,9 +23,9 @@ function list_sanpham1()
     $listsp = pdo_query($sql);
     return $listsp;
 }
-function list_sanpham_top10()
+function list_sanpham_top5()
 {
-    $sql = "SELECT*FROM sanpham WHERE 1 ORDER BY luotxem desc limit 0,10";
+    $sql = "SELECT*FROM sanpham WHERE 1 ORDER BY luotxem desc limit 0,5";
     $listsp = pdo_query($sql);
     return $listsp;
 }

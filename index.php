@@ -8,6 +8,7 @@ include "./view/header.php";
 include "global.php";
 $dsdm = loadall_danhmuc();
 $spnew = list_sanpham_home();
+$dstop5 = list_sanpham_top5();
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
@@ -109,6 +110,18 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $dssp = list_sanpham("", $iddm);
                 $ten = loadtendm($iddm);
                 include "view/sanpham.php";
+            } else {
+                include "view/home.php";
+            }
+            break;
+        case 'sanphamct':
+            if (isset($_GET['idsp']) && ($_GET['idsp'] > 0)) {
+                $id = $_GET['idsp'];
+                $onesp = sua_sanpham($id);
+                extract($onesp);
+                $spcungloai = sua_sanpham_cungloai($id, $iddm);
+
+                include "view/sanphamct.php";
             } else {
                 include "view/home.php";
             }
