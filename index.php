@@ -126,6 +126,21 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 include "view/home.php";
             }
             break;
+        case 'listsp':
+            if (isset($_POST['listok']) && ($_POST['listok'])) {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = '';
+            }
+            
+            $listsp = list_sanpham($kyw);
+            
+            if (empty($listsp)) {
+                echo "Không có sản phẩm nào được tìm thấy.";
+            } else {
+                include "view/sanphamtimkiem.php";
+            }
+            break;
     }
 } else {
     include "./view/home.php";

@@ -16,9 +16,11 @@
           />
         </div>
         <div class="header_search">
-          <input type="text" />
-          <button>Tìm kiếm</button>
+          <form action="index.php?act=listsp" method="post">
+          <input type="text" placeholder="Nhập sản phẩm tìm kiếm" name="kyw" />
+          <input type="submit" id="go1" name="listok" value="Tìm kiếm">
         </div>
+          </form>
         <div class="header_dndk">
         <?php
         if (isset($_SESSION['user'])) {
@@ -26,7 +28,7 @@
         ?>
             <div style="margin: 0px 20px">
             <p>Xin chào</p>
-            <p><?= $user ?></p>
+            <p><a href="#"><?= $user ?></a></p>
             <?php if ($role == 1) { ?>
                 <a href="admin/index.php">Đăng nhập admin</a>
             <?php } ?>

@@ -48,12 +48,27 @@
     </div>
 </div>
 <div class="sanpham_chitiet">
-<div class="sanpham_chitiet_lienquan">
-    <h2>Sản phẩm tương tự</h2>
-</div>
-<div class="sanpham_chitiet_hienthilienquan">
+    <div class="sanpham_chitiet_lienquan">
+        <h2>Sản phẩm tương tự</h2>
+    </div>
+    <div class="sanpham_chitiet_hienthilienquan">
 
-</div>
+        <?php
+        foreach ($spcungloai as $spcungloai) {
+            extract($spcungloai);
+            $linksp = "index.php?act=sanphamct&idsp=" . $id;
+            $img = $imm . $img;
+            echo '<div class="sanphamlienquan">
+            <a href="' . $linksp . '"><img src="' . $img . '"></a>
+                <a href="' . $linksp . '"><p>' . $tensp . '</p></a>
+                <a href="' . $linksp . '"><p>' . $giasp . '</p></a>
+                </div>
+                ';
+        }
+        ?>
+
+
+    </div>
 </div>
 
 <!-- <button>Mua ngay</button> -->

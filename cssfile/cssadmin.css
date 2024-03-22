@@ -30,18 +30,19 @@ header img {
   margin: 0px 10px;
   
 }
-.header_search input {
+.header_search input:nth-child(1) {
   width: 330px;
   height: 23px;
 }
-.header_search input:hover {
-  border-color: #2d06f5;
-}
-.header_search button {
+.header_search input:nth-child(2) {
   height: 22px;
   font-weight: bold;
   background-color: rgba(239, 239, 239, 0.891);
 }
+.header_search input:hover {
+  border-color: #2d06f5;
+}
+
 .header_search button:hover {
   color: #2d06f5;
 }
@@ -416,7 +417,22 @@ tr:nth-child(even) {
   background-color: gray;
 }
 .sanpham_chitiet_hienthilienquan{
-  display: grid;
+  display: flex;
   width: 100%;
-  grid-template-columns: auto auto auto auto auto ;
+
+
 }
+.sanpham_chitiet_hienthilienquan .sanphamlienquan{
+margin: 0px 10px;
+  width: 220px;
+  height: 300px;
+  text-align: center;
+} 
+.sanpham_chitiet_hienthilienquan .sanphamlienquan img{
+  width: 200px;
+  height: 200px;
+} 
+.sanpham_chitiet_hienthilienquan .sanphamlienquan a{
+  text-decoration: none;
+  color: black;
+} 
