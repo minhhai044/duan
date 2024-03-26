@@ -5,22 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang chủ</title>
     <link rel="stylesheet" href="./cssfile/cssadmin.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <div class="container">
+    <div class="container1">
       <header>
         <div class="header_img">
           <img
-            src="https://tse4.mm.bing.net/th?id=OIP.QdkBFiUZG4SMw0C7krIbrwHaHa&pid=Api&P=0&h=180"
+            src="https://img.freepik.com/premium-vector/creative-modern-illustration-seventy-seven-monogram-sign-geometric-logo-design-template_320494-1676.jpg"
             alt=""
           />
         </div>
         <div class="header_search">
           <form action="index.php?act=listsp" method="post">
-          <input type="text" placeholder="Nhập sản phẩm tìm kiếm" name="kyw" />
-          <input type="submit" id="go1" name="listok" value="Tìm kiếm">
-        </div>
+          <input type="text" style="width: 300px;" class="form-control" id="exampleFormControlInput1" name="kyw" placeholder="Nhập sản phẩm tìm kiếm">
+          <input type="submit" style="border-radius: 5px; margin-left: 2px; ; border:none;" id="go1" name="listok" value="Tìm kiếm">
           </form>
+        </div>
+          
         <div class="header_dndk">
         <?php
         if (isset($_SESSION['user'])) {

@@ -31,7 +31,7 @@ function list_sanpham_top5()
 }
 function list_sanpham_home()
 {
-    $sql = "SELECT*FROM sanpham WHERE 1 ORDER BY id desc limit 0,15";
+    $sql = "SELECT*FROM sanpham WHERE 1 ORDER BY id desc limit 0,10";
     $listsp = pdo_query($sql);
     return $listsp;
 }

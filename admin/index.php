@@ -1,8 +1,10 @@
 <?php
+session_start();
 include "../model/pdo.php";
 include "../model/danhmuc.php";
 include "../model/sanpham.php";
 include "../model/taikhoan.php";
+include "../model/binhluan.php";
 include "header.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -137,7 +139,18 @@ if (isset($_GET['act'])) {
             $listtk = list_taikhoan();
             include "taikhoan/list.php";
             break;
-
+            case 'xoabl':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    // $sql = "DELETE FROM danhmuc WHERE id=".$_GET['id'];
+                    // pdo_execute($sql);
+                    delete_binhluan($_GET['id']);
+                }
+                // $sql = "SELECT*FROM danhmuc ORDER BY id desc";
+                // $listdm = pdo_query($sql);
+                $listbl = list_binhluan(0);
+                include "binhluan/list.php";
+                break;
+                //COntroler tin tuc  //COntroler tin tuc  //COntroler tin tuc 
 
 
 

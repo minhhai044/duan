@@ -14,9 +14,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
     switch ($act) {
         case 'dangky':
 
+            // Khởi tạo các biến nhận dữ liệu từ form
             $email = isset($_POST['email']) ? $_POST['email'] : '';
             $user = isset($_POST['user']) ? $_POST['user'] : '';
             $pass = isset($_POST['pass']) ? $_POST['pass'] : '';
+            $pass_confirm = isset($_POST['pass_confirm']) ? $_POST['pass_confirm'] : '';
             $address = isset($_POST['address']) ? $_POST['address'] : '';
             $tele = isset($_POST['tele']) ? $_POST['tele'] : '';
             $thongbao = '';
@@ -43,6 +45,13 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $errors[] = "Vui lòng nhập mật khẩu.";
                 }
 
+                // Kiểm tra nhập lại mật khẩu
+                if (empty($pass_confirm)) {
+                    $errors[] = "Vui lòng nhập lại mật khẩu.";
+                } elseif ($pass_confirm !== $pass) {
+                    $errors[] = "Mật khẩu nhập lại không khớp.";
+                }
+
                 // Kiểm tra địa chỉ
                 if (empty($address)) {
                     $errors[] = "Vui lòng nhập địa chỉ.";
@@ -57,17 +66,19 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
                 // Nếu không có lỗi, thực hiện thêm tài khoản
                 if (empty($errors)) {
-                    add_taikhoan($email, $user, $pass, $address, $tele);
+                    // Thực hiện thêm tài khoản vào cơ sở dữ liệu ở đây
+                    // add_taikhoan($email, $user, $pass, $address, $tele);
                     $thongbao = "Đã đăng ký thành công!";
                     // Đặt lại giá trị các trường nhập về trống
                     $email = '';
                     $user = '';
                     $pass = '';
+                    $pass_confirm = '';
                     $address = '';
                     $tele = '';
                 } else {
                     // Nếu có lỗi, hiển thị các lỗi
-                    $thongbao = "Đăng ký không thành công. Vui lòng kiểm tra lại các trường sau:<br>" . implode("<br>", $errors);
+                    $thongbao = "<div style='color:red;'>Đăng ký không thành công. Vui lòng kiểm tra lại ";
                 }
             }
 
@@ -132,9 +143,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             } else {
                 $kyw = '';
             }
-            
+
             $listsp = list_sanpham($kyw);
-            
+
             if (empty($listsp)) {
                 echo "Không có sản phẩm nào được tìm thấy.";
             } else {

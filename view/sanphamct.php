@@ -6,6 +6,7 @@
     <div class="sanpham_chitiet_hienthi">
         <?php
         $img = $imm . $img;
+        $gia_fomat = number_format($giasp, 0, '.', '.');
         echo '<div class="sanpham_chitiet_hienthi_left"><img src="' . $img . '"></div>';
 
         ?>
@@ -31,10 +32,18 @@
                 </button>
             </div>
             <div class="giasp">
-                Giá tiền :
+
                 <?php
-                echo '  <p  id="giasp" >' . $giasp . '</p>';
-                ?><p id="hienthi"></p>
+                echo ' <h5 style="display:inline
+                ">Giá gốc sản phẩm :</h5> <span style="font-size: 20px;" > ' . $gia_fomat . '</span> <span style="font-size: 20px;"> VND</span>
+                <input type="text" hidden  id="giasp" value="' . $giasp . '">
+                
+                ';
+
+                ?> <br>
+                <h5 style="display:inline
+               "> Giá thay đổi : </h5>
+                <span style="font-size: 20px;" id="hienthi"></span><span style="font-size: 20px;"> VND</span>
             </div>
             <div class="buttom_chitiet">
                 <button>Mua ngay</button>
@@ -58,10 +67,13 @@
             extract($spcungloai);
             $linksp = "index.php?act=sanphamct&idsp=" . $id;
             $img = $imm . $img;
+            $gia_fomat = number_format($giasp, 0, '.', '.');
             echo '<div class="sanphamlienquan">
             <a href="' . $linksp . '"><img src="' . $img . '"></a>
-                <a href="' . $linksp . '"><p>' . $tensp . '</p></a>
-                <a href="' . $linksp . '"><p>' . $giasp . '</p></a>
+            <h5><a href="' . $linksp . '">' . $tensp . '</a></h5>
+                <a href="' . $linksp . '"><p>' . $gia_fomat . ' VND</p></a>
+    <p><button type="button" class="btn btn-success">Thêm giỏ hàng</button></p>
+                
                 </div>
                 ';
         }
@@ -70,55 +82,78 @@
 
     </div>
 </div>
+<div class="sanpham_chitiet">
+    <div class="sanpham_chitiet_lienquan">
+    <h2>Bình luận</h2>
+
+    </div>
+    <div class="sanpham_chitiet_hienthilienquan">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#binhluan").load("view/binhluanform.php", {
+                idpro: <?= $id ?>
+            });
+        });
+    </script>
+    <div class="item1-bl-content" id="binhluan">
+
+    </div>
+    <div>
+        <!-- <iframe src="view/binhluanform.php?idpro=<?= $id ?>" frameborder="0" width="100%" height="200px"></iframe> -->
+    </div>
+
+
+    </div>
+</div>
 
 <!-- <button>Mua ngay</button> -->
 
 <script>
+    // Lấy các phần tử DOM 
     let giasp = document.getElementById('giasp');
     let hienthi = document.getElementById('hienthi');
-    // console.log(+giasp.textContent);
     let amountElement = document.getElementById('amount');
-    let amount = amountElement.value;
-    //  console.log(amount);
-    let render = (amount) => {
-        amountElement.value = amount;
 
-    }
-    let b = 1 * +giasp.textContent;
-    hienthi.innerHTML = b;
-    hienthi.style.display = "none";
+    // Lấy giá và số lượng ban đầu
+    let giaBanDau = +giasp.value;
+    console.log(giaBanDau);
+    let amount = parseInt(amountElement.value);
+    // console.log([giasp.innerHTML]);
+    // Hàm tính toán và hiển thị tổng giá
+    let hienThiTongGia = () => {
+        let tongGia = +giaBanDau * amount;
+        // console.log(tongGia);
+        hienthi.innerHTML = tongGia.toLocaleString();
+    };
 
-    // Plus
+    //  tăng số lượng 
     let handlePlus = () => {
         amount++;
-        render(amount);
+        amountElement.value = amount;
+        hienThiTongGia();
+    };
 
-        let b = amount * +giasp.textContent;
-        hienthi.innerHTML = b;
-        giasp.style.display = "none";
-        hienthi.style.display = "block";
-
-    }
-    // Minus
+    // giảm số lượng 
     let handleMinus = () => {
         if (amount > 1) {
             amount--;
+            amountElement.value = amount;
+            hienThiTongGia();
         }
-        render(amount);
-        let b = amount * +giasp.textContent;
-        hienthi.innerHTML = b;
-        giasp.style.display = "none";
-        hienthi.style.display = "block";
+    };
 
-
-
-
-    }
+    // Xử lý sự kiện khi nhập số lượng
     amountElement.addEventListener('input', () => {
-        amount = amountElement.value
-        //     console.log(amount);
-        amount = parseInt(amount);
-        amount = (isNaN(amount) || amount === 0) ? 1 : amount;
-        render(amount);
-    })
+        amount = parseInt(amountElement.value);
+        if (isNaN(amount) || amount < 1) {
+            amount = 1;
+            amountElement.value = amount;
+        }
+        hienThiTongGia();
+    });
+
+    // Hiển thị tổng giá ban đầu
+    hienThiTongGia();
 </script>

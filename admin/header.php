@@ -30,6 +30,7 @@
           <li><a href="index.php?act=adddm">Danh mục</a></li>
           <li><a href="index.php?act=addsp">Sản phẩm</a></li>
           <li><a href="index.php?act=dskh">Tài khoản</a></li>
+          <li><a href="index.php?act=dsbl">Bình luận</a></li>
           <li><a href="../index.php">Thoát</a></li>
         </ul>
       </nav>
