@@ -69,7 +69,16 @@
       <a href="' . $link . '"><img src="' . $hinh . '" alt="" /></a>
     <h5><a href="' . $link . '">' . $tensp . '</a></h5>
     <p><a style="color:gray;" href="' . $link . '">' . $gia_fomat . ' VND</a></p>
-    <p><button type="button" class="btn btn-success">Thêm giỏ hàng</button></p>
+    <p>
+    <form action="index.php?act=addtocart" method="post">
+    <input type="hidden" name="id" value="'.$id.'">
+    <input type="hidden" name="tensp" value="'.$tensp.'">
+    <input type="hidden" name="img" value="'.$hinh.'">
+    <input type="hidden" name="giasp" value="'.$giasp.'">
+    <input type="submit" name="addtocart" value="Thêm giỏ hàng" class="btn btn-success">
+    </form>
+
+    </p>
     </div>';
   }
   ?>

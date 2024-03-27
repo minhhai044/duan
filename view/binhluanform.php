@@ -5,8 +5,9 @@ include "../model/binhluan.php";
 $idpro = $_REQUEST['idpro'];
 $dsbl = list_binhluan($idpro);
 ?>
+<table>
 <div class="binhluan">
-    <table>
+    
         <tr>
             <th>Nội dung</th>
             <th>Người bình luận</th>
@@ -16,14 +17,14 @@ $dsbl = list_binhluan($idpro);
         foreach ($dsbl as $bl) {
             extract($bl);
             echo '<tr>
-            <td>' . $noidung . '</td>';
+            <td id="td_binhluan">' . $noidung . '</td>';
             echo '<td>' . $iduser . '</td>';
             echo '<td>' . $ngaybinhluan . '</td></tr>';
         }
         ?>
-    </table>
-</div>
 
+</div>
+</table>
 <?php
 if (isset($_POST['guibinhluan']) && ($_POST['guibinhluan'])) {
     $noidung = $_POST['noidung'];

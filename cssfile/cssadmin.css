@@ -504,7 +504,7 @@ background-color: aquamarine;
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;h1
+  width: 100%;
 }
 
 td, th {
@@ -512,9 +512,18 @@ td, th {
   text-align: left;
   padding: 8px;
 }
-td:nth-child(1){
+#td_binhluan{
   width: 70%;
 }
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+.table_giohang {
+  padding: 10px;
+}
+.img_comfirm {
+  text-align: center;
+}
+.img_comfirm img {
+  padding: 100px;
 }

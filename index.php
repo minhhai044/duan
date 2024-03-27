@@ -4,8 +4,10 @@ include "model/pdo.php";
 include "model/sanpham.php";
 include "model/danhmuc.php";
 include "model/taikhoan.php";
+include "model/cart.php";
 include "./view/header.php";
 include "global.php";
+if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 $dsdm = loadall_danhmuc();
 $spnew = list_sanpham_home();
 $dstop5 = list_sanpham_top5();
@@ -151,6 +153,40 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             } else {
                 include "view/sanphamtimkiem.php";
             }
+            break;
+        case 'addtocart':
+            if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
+                $id = $_POST['id'];
+                $tensp = $_POST['tensp'];
+                $img = $_POST['img'];
+                $giasp = $_POST['giasp'];
+                $soluong = 1;
+                $ttien = $soluong * $giasp;
+                $spadd = [$id, $tensp, $img, $giasp, $soluong, $ttien];
+
+                array_push($_SESSION['mycart'], $spadd);
+            }
+            include "view/cart/viewcart.php";
+            break;
+        case 'delcart':
+            if (isset($_GET['idcart']) && isset($_SESSION['mycart'])) {
+                $idcart = $_GET['idcart'];
+                // Xóa phần tử khỏi mảng
+                array_splice($_SESSION['mycart'], $idcart, 1);
+            } else {
+                $_SESSION['mycart'] = [];
+            }
+            header('Location: index.php?act=viewcart');
+            break;
+
+        case 'viewcart':
+            include "view/cart/viewcart.php";
+            break;
+        case 'bill':
+            include "view/cart/bill.php";
+            break;
+        case 'billcomfirm':
+            include "view/cart/billcomfirm.php";
             break;
     }
 } else {
